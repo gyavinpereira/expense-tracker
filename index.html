@@ -622,8 +622,8 @@
       setToday();
 
       apiCall("getEntryData", null)
-        .then(function(data) {
-          entryData = data;
+        .then(function(response) {
+          entryData = response.data || response;
           loadCategories();
           loadPaymentModes();
         })
